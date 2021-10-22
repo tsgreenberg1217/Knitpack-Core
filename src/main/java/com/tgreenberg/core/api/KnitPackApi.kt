@@ -7,7 +7,7 @@ import com.tgreenberg.core.models.UIKnittingProject
 
 object KnitPackApi {
 
-    suspend fun postProject(project: UIKnittingProject) {
+    suspend fun postProject(project: UIKnittingProject): Boolean {
         val db = Firebase.firestore
         val postProject = hashMapOf(
             project.name to "name",
@@ -15,11 +15,12 @@ object KnitPackApi {
 //            project.level to "level"
         )
         val x = db.collection("projects").add(postProject)
+        return x.isSuccessful
 
-        if (x.isSuccessful) {
-            Log.d("FIREBASE TESTING", "success ${x.result}")
-        } else {
-            Log.d("FIREBASE TESTING", "error ${x.exception?.message}")
-        }
+//        if (x.isSuccessful) {
+//            Log.d("FIREBASE TESTING", "success ${x.result}")
+//        } else {
+//            Log.d("FIREBASE TESTING", "error ${x.exception?.message}")
+//        }
     }
 }

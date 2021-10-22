@@ -1,12 +1,13 @@
 package com.tgreenberg.core.models
 
+import android.graphics.Bitmap
 import android.net.Uri
 
 data class ProjectTxt(
     val name: String, val steps: List<String>, val level: String
 )
 
-data class KnitUri(var res: Uri?)
+data class KnitUri(var res: Bitmap?)
 
 data class UIKnittingProject(
     var name: String = "",
