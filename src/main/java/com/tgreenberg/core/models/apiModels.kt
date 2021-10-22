@@ -15,12 +15,6 @@ data class UIKnittingProject(
     var pattern: String = "",
     var yarn: String = "",
     var needles: String = "",
-    var images: List<KnitUri> = listOf(
-        KnitUri(null),
-        KnitUri(null),
-        KnitUri(null),
-        KnitUri(null),
-        KnitUri(null)
-    )
+    var images: List<KnitUri> = listOf()
 
 )
